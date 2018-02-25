@@ -1,0 +1,57 @@
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Buy GamblingToken ( 1 ETH = 5000 GBT )</h1>
+    <h1 class="title is-6 is-info help">{{status}}</h1>
+
+    <form #coinForm="ngForm">
+      <div class="field">
+        <label class="label">Amount</label>
+        <p class="control">
+          <input [(ngModel)]="sendingAmount" class="input" type="text" placeholder="95" name="sendingAmount" required #sendingAmountModel="ngModel"
+            (keyup)="calculatePrice($event)">
+        </p>
+        <div *ngIf="sendingAmountModel.errors && (sendingAmountModel.dirty || sendingAmountModel.touched)" class="help is-danger">
+          <p [hidden]="!sendingAmountModel.errors.required">
+            This field is required
+          </p>
+        </div>
+        <div *ngIf="!sendingAmountModel.errors && (sendingAmountModel.dirty || sendingAmountModel.touched)" class="help is-danger">
+          <p [hidden]="canBeNumber(sendingAmount)">
+            Must be a number
+          </p>
+        </div>
+      </div>
+
+      <!--
+      <div class="field">
+        <label class="label">To Address</label>
+        <p class="control">
+          <input [(ngModel)]="recipientAddress" name="recipientAddress" class="input" type="text" placeholder="0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"
+            name="recipientAddress" required #recipientAddressModel="ngModel">
+        </p>
+        <div *ngIf="recipientAddressModel.errors && (recipientAddressModel.dirty || recipientAddressModel.touched)" class="help is-danger">
+          <p [hidden]="!recipientAddressModel.errors.required">
+            This field is required
+          </p>
+        </div>
+        <div *ngIf="!recipientAddressModel.errors && (recipientAddressModel.dirty || recipientAddressModel.touched)" class="help is-danger">
+          <p [hidden]="canBeNumber(recipientAddress)">
+            Must be a number
+          </p>
+        </div>
+      </div>
+    -->
+
+      <div class="field is-grouped">
+        <p class="control">
+          <button [disabled]=" !isValid()" (click)="buyTokens()" class="button is-primary">
+            Pay &nbsp;
+            <span *ngIf="isValid()"> {{etherAmount}} ETH</span>
+          </button>
+        </p>
+      </div>
+    </form>
+
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">: Play The Game :</h1>
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input [(ngModel)]="playerName" class="input" type="text" placeholder="Enter your name">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Role</label>
+      <div class="control">
+        <div class="select">
+          <select (change)="selectdrop($event)">
+            <option>Gambler</option>
+            <option>Bidder</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <label class="label">Guesses</label>
+    <div *ngIf=" playerType == 'Bidder' " class="field is-grouped is-grouped-multiline guesses">  
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+      <p class="control">
+          <input class="input" type="text" maxlength="3">
+      </p>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button class="button is-link">Play</button>
+      </div>
+    </div>
+  </div>
+</section>

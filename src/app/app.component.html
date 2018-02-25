@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<section class="hero is-medium is-info is-bold">
+  <div class="hero-body">
+    <div class="container">
+
+      <h2 class="title is-2">
+        Account : {{account}}
+      </h2>
+
+      <h3 class="title">
+        You have
+        <span class="is-medium has-underline">{{tokenBalance}}</span> GBT
+      </h3>
+      <h3 class="title">
+        You have
+        <span class="is-medium has-underline">{{etherBalance}}</span> ETH
+      </h3>
+    </div>
+  </div>
+</section>
+<br>
+
+<router-outlet></router-outlet>
